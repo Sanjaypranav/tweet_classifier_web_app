@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Tweet Classifier</title>
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
     <h1>"Welcome to Tweetz"</h1>
 <!-- Enter text of tweets to classify text-->
-    <form action="index.php" method="post">
+<div class="get_text">
+    <form action="{{ url_for('predict')}}" method="post">
         <textarea name="tweet" rows="10" cols="50"></textarea>
-        <input type="submit" value="Classify">
+        <br>
+        <input type="submit" value="Classify" class="submit" placeholder="Enter text of a tweet" required>
+        <br>
     </form>
+</div>
+<!-- Display the results of the classification -->
+<div>
+    <ul>
+        {{tweet_list}}
+    </ul>
+</div>
+ 
 </body>
 </html>
