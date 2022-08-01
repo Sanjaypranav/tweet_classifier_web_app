@@ -3,7 +3,7 @@ virtual-env:
 
 install:
 	make virtual-env
-	source activate twtapp
+	conda activate twtapp
 	pip install -r requirements.txt
 
 run:
